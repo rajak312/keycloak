@@ -3,10 +3,10 @@ import type { ClassKey } from "keycloakify/login";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
-import Template from "keycloakify/login/Template";
-const UserProfileFormFields = lazy(
-    () => import("keycloakify/login/UserProfileFormFields")
-);
+import Template from "./Template";
+import { AppThemeProvider } from "../providers/AppThemeProvider";
+const UserProfileFormFields = lazy(() => import("./UserProfileFormFields"));
+const Login = lazy(() => import("./pages/Login"));
 
 const doMakeUserConfirmPassword = true;
 
@@ -17,22 +17,32 @@ export default function KcPage(props: { kcContext: KcContext }) {
 
     return (
         <Suspense>
-            {(() => {
-                switch (kcContext.pageId) {
-                    default:
-                        return (
-                            <DefaultPage
-                                kcContext={kcContext}
-                                i18n={i18n}
-                                classes={classes}
-                                Template={Template}
-                                doUseDefaultCss={true}
-                                UserProfileFormFields={UserProfileFormFields}
-                                doMakeUserConfirmPassword={doMakeUserConfirmPassword}
-                            />
-                        );
-                }
-            })()}
+            <AppThemeProvider>
+                {(() => {
+                    switch (kcContext.pageId) {
+                        case "login.ftl":
+                            return (
+                                <Login
+                                    {...{ kcContext, i18n, classes }}
+                                    Template={Template}
+                                    doUseDefaultCss={true}
+                                />
+                            );
+                        default:
+                            return (
+                                <DefaultPage
+                                    kcContext={kcContext}
+                                    i18n={i18n}
+                                    classes={classes}
+                                    Template={Template}
+                                    doUseDefaultCss={true}
+                                    UserProfileFormFields={UserProfileFormFields}
+                                    doMakeUserConfirmPassword={doMakeUserConfirmPassword}
+                                />
+                            );
+                    }
+                })()}
+            </AppThemeProvider>
         </Suspense>
     );
 }
