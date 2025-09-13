@@ -11,9 +11,10 @@
         "postinstall": "keycloakify sync-extensions",
         "dev": "vite",
         "build": "tsc && vite build",
-        "build-keycloak-theme": "npm run build && keycloakify build",
+        "build-keycloak-theme": "pnpm build && keycloakify build",
         "storybook": "storybook dev -p 6006",
-        "format": "prettier . --write"
+        "format": "prettier . --write",
+        "start":"keycloakify start-keycloak"
     },
     "license": "MIT",
     "keywords": [],
