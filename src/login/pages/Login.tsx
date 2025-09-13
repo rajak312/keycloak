@@ -77,7 +77,6 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
         >
             <div id="kc-form">
                 <div id="kc-form-wrapper">
-                    Login Page
                     {realm.password && (
                         <form
                             id="kc-form-login"
