@@ -84,7 +84,6 @@ export default function CreateUser() {
         <>
             <ViewHeader titleKey={t("createUser")} className="kc-username-view-header" />
             <PageSection variant="light">
-                <div>Hello how are you, I am going to create a user</div>
                 <UserForm
                     form={form}
                     realm={realm}
