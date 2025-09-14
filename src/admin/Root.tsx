@@ -9,6 +9,7 @@
 
 // @ts-nocheck
 
+import { AppThemeProvider } from "../providers/AppThemeProvider";
 import { KeycloakProvider } from "../shared/keycloak-ui-shared";
 
 import { App } from "./App";
@@ -16,6 +17,8 @@ import { environment } from "./environment";
 
 export const Root = () => (
     <KeycloakProvider environment={environment}>
-        <App />
+        <AppThemeProvider>
+            <App />
+        </AppThemeProvider>
     </KeycloakProvider>
 );
