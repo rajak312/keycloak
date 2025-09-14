@@ -9,8 +9,6 @@
 
 /* eslint-disable */
 
-// @ts-nocheck
-
 import type GroupRepresentation from "@keycloak/keycloak-admin-client/lib/defs/groupRepresentation";
 import type { UserProfileMetadata } from "@keycloak/keycloak-admin-client/lib/defs/userProfileMetadata";
 import {
