@@ -33,6 +33,7 @@
     "@patternfly/react-styles": "^5.4.1",
     "@patternfly/react-table": "^5.4.16",
     "@uiw/react-textarea-code-editor": "^3.1.0",
+    "axios": "^1.12.2",
     "file-saver": "^2.0.5",
     "flat": "^6.0.1",
     "i18next": "^24.2.3",
