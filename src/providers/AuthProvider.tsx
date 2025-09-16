@@ -1,7 +1,13 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import axios from "axios";
 
-type User = { preferred_username: string; email: string };
+export interface User {
+    id: string;
+    username: string;
+    email: string;
+    roles: [];
+}
+
 type AuthContextType = {
     user: User | null;
     loading: boolean;
@@ -21,7 +27,7 @@ export const AuthProvider = ({ children }: Props) => {
 
     const fetchUser = async () => {
         try {
-            const res = await axios.get(`${BACKEND_URL}/auth/me`, {
+            const res = await axios.get(`${BACKEND_URL}/user/me`, {
                 withCredentials: true
             });
             setUser(res.data);
@@ -35,8 +41,12 @@ export const AuthProvider = ({ children }: Props) => {
     const login = () => {
         window.location.href = `${BACKEND_URL}/auth/login`;
     };
-    const logout = () => {
-        window.location.href = `${BACKEND_URL}/auth/logout`;
+    const logout = async () => {
+        const res = await axios.get(`${BACKEND_URL}/user/logout`, {
+            withCredentials: true
+        });
+        console.log("Res", res.data);
+        login();
     };
 
     useEffect(() => {

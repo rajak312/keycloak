@@ -33,7 +33,7 @@ export function Header() {
 
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     <Typography variant="body1" sx={{ mr: 2 }}>
-                        {user?.preferred_username || ""}
+                        {user?.username || ""}
                     </Typography>
 
                     <IconButton onClick={handleMenuOpen} size="large" color="inherit">
