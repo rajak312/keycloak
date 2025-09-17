@@ -72,6 +72,23 @@
 # admin/groups/routes.ts
 # admin/groups/SubGroupsContext.tsx
 # admin/i18n/i18n.ts
+# admin/i18n/messages_ca.properties
+# admin/i18n/messages_de.properties
+# admin/i18n/messages_en.properties
+# admin/i18n/messages_es.properties
+# admin/i18n/messages_fr.properties
+# admin/i18n/messages_it.properties
+# admin/i18n/messages_ja.properties
+# admin/i18n/messages_ka.properties
+# admin/i18n/messages_lt.properties
+# admin/i18n/messages_nl.properties
+# admin/i18n/messages_no.properties
+# admin/i18n/messages_pl.properties
+# admin/i18n/messages_pt_BR.properties
+# admin/i18n/messages_ro.properties
+# admin/i18n/messages_ru.properties
+# admin/i18n/messages_sl.properties
+# admin/i18n/messages_zh_CN.properties
 # admin/identity-providers/IdentityProvidersSection.tsx
 # admin/identity-providers/ManageOrderDialog.tsx
 # admin/identity-providers/OIDCConfigurationRepresentation.ts
@@ -668,23 +685,6 @@
 /admin/assets/icon.svg
 /admin/assets/img_avatar.svg
 /admin/assets/logo.svg
-/admin/i18n/messages_ca.properties
-/admin/i18n/messages_de.properties
-/admin/i18n/messages_en.properties
-/admin/i18n/messages_es.properties
-/admin/i18n/messages_fr.properties
-/admin/i18n/messages_it.properties
-/admin/i18n/messages_ja.properties
-/admin/i18n/messages_ka.properties
-/admin/i18n/messages_lt.properties
-/admin/i18n/messages_nl.properties
-/admin/i18n/messages_no.properties
-/admin/i18n/messages_pl.properties
-/admin/i18n/messages_pt_BR.properties
-/admin/i18n/messages_ro.properties
-/admin/i18n/messages_ru.properties
-/admin/i18n/messages_sl.properties
-/admin/i18n/messages_zh_CN.properties
 /admin/clients/__tests__/mock-clients.json
 /admin/groups/__tests__/mock-groups.json
 /admin/realm-roles/__tests__/mock-roles.json
