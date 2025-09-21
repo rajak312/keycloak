@@ -8,21 +8,23 @@ export interface User {
     roles: [];
 }
 
-type AuthContextType = {
+export interface AuthContextType {
     user: User | null;
     loading: boolean;
     login: () => void;
     logout: () => void;
-};
+}
+
+export interface AuthProviderProps {
+    children: ReactNode;
+}
 
 const AuthContext = createContext<AuthContextType | null>(null);
 
 const BACKEND_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 const redirectUri = `${window.location.origin}/auth/callback`;
 
-type Props = { children: ReactNode };
-
-export const AuthProvider = ({ children }: Props) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
     const [authInProgress, setAuthInProgress] = useState(false);
